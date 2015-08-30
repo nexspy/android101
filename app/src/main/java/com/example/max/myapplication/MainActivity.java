@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,14 +26,26 @@ public class MainActivity extends AppCompatActivity {
         txtUsername = (TextView) findViewById(R.id.username);
         txtPassword = (TextView) findViewById(R.id.password);
 
-//        ImageButton btnLogin = (ImageButton) findViewById(R.id.btnLogin);
-//
-//        btnLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                txtHello.setText("Goodbye");
-//            }
-//        });
+
+        String[] inspirations = {"Coffee Machine", "Flying boards", "Inside Out Design"};
+
+
+//        ListAdapter theAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, inspirations);
+//        ListAdapter theAdapter = new ArrayAdapter<String>(this, R.layout.row_layout, R.id.textView1, inspirations);
+
+        ListAdapter theAdapter = new MyAdapter(this, inspirations);
+
+        ListView listview = (ListView) findViewById(R.id.listInspiration);
+        listview.setAdapter(theAdapter);
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String inspiraiton = "You selecte" + String.valueOf(parent.getItemAtPosition(position));
+
+                Toast.makeText(MainActivity.this, inspiraiton, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
