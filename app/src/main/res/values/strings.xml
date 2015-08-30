@@ -9,5 +9,7 @@
     <string name="login_password">Password</string>
     <string name="msg_success_login">Successfully logged in</string>
     <string name="msg_fail_login">Failed logged in</string>
+    <string name="action_sync">Sync</string>
+    <string name="title_exit">Exit</string>
 
 </resources>

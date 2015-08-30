@@ -1,5 +1,6 @@
 package com.example.max.myapplication;
 
+import android.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -64,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            DialogFragment myFragment = new MyDialogFragment();
+
+            myFragment.show(getFragmentManager(), "theDialog");
+
+            return true;
+        } else if (id == R.id.action_sync) {
+            Toast.makeText(MainActivity.this, "Sync Started...", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.action_exit) {
+            finish();
             return true;
         }
 
