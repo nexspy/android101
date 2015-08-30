@@ -7,24 +7,29 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView txtUsername;
+    private TextView txtPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView txtHello = (TextView) findViewById(R.id.textView);
+        txtUsername = (TextView) findViewById(R.id.username);
+        txtPassword = (TextView) findViewById(R.id.password);
 
-        ImageButton btnFirst = (ImageButton) findViewById(R.id.imageButton);
-
-        btnFirst.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtHello.setText("Goodbye");
-            }
-        });
+//        ImageButton btnLogin = (ImageButton) findViewById(R.id.btnLogin);
+//
+//        btnLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                txtHello.setText("Goodbye");
+//            }
+//        });
     }
 
     @Override
@@ -47,5 +52,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void tryUserLogin(View view) {
+        String username = String.valueOf(txtUsername.getText());
+        String password = String.valueOf(txtPassword.getText());
+        Boolean valid = false;
+
+        if (username.equals("admin") && password.equals("admin")) {
+            valid = true;
+        }
+
+        if (valid) {
+            Toast.makeText(MainActivity.this, R.string.msg_success_login, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(MainActivity.this, R.string.msg_fail_login, Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 }
