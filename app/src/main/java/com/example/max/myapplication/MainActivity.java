@@ -1,6 +1,7 @@
 package com.example.max.myapplication;
 
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +19,15 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView txtUsername;
     private TextView txtPassword;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Get data from previous Activity
+        String nameReceived = data.getStringExtra("username");
+        txtUsername.setText(nameReceived);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +102,13 @@ public class MainActivity extends AppCompatActivity {
 
         if (valid) {
             Toast.makeText(MainActivity.this, R.string.msg_success_login, Toast.LENGTH_SHORT).show();
+
+            // move to home page
+            Intent getNameScreenIntent = new Intent(this, HomeScreen.class);
+            final int result = 1;
+            getNameScreenIntent.putExtra("callingActivity", "Data to Send from Actv 1");
+//            startActivity(getNameScreenIntent);
+            startActivityForResult(getNameScreenIntent, result);
         } else {
             Toast.makeText(MainActivity.this, R.string.msg_fail_login, Toast.LENGTH_SHORT).show();
         }
