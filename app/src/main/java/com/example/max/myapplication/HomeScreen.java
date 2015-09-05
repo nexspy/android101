@@ -3,9 +3,11 @@ package com.example.max.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by max on 01/09/15.
@@ -40,5 +42,15 @@ public class HomeScreen extends Activity{
         setResult(RESULT_OK, goingBack);
 
         finish();
+    }
+
+    public void goDetailPage(View view) {
+        Log.w("home", "going detail");
+
+//        Toast.makeText(HomeScreen.this, "Try to go detail page!", Toast.LENGTH_SHORT).show();
+
+        Intent goDetailPage = new Intent(this, DetailScreen.class);
+        getIntent().putExtra("id", "12");
+        startActivity(goDetailPage);
     }
 }

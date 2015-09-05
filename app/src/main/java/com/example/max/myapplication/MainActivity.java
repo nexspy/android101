@@ -1,7 +1,11 @@
 package com.example.max.myapplication;
 
 import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, inspiraiton, Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
     }
 
     @Override

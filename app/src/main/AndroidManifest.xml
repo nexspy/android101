@@ -24,6 +24,13 @@
 
         </activity>
 
+        <activity android:name=".DetailScreen"
+            android:label="Get Detail Screen"
+            android:theme="@style/AppTheme"
+            >
+
+        </activity>
+
     </application>
 
 </manifest>
