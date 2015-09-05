@@ -1,13 +1,23 @@
 <resources>
 
+    <color name="txt_color_main">#4a148c</color>
+    <color name="windowBG">#ffedeb</color>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-
-
-
     </style>
 
-    <color name="txt_color_main">#4a148c</color>
+    <style name="AppClientTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/windowBG</item>
+
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+
+    <style name="page_title">
+        <item name="android:textSize">60sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

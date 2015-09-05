@@ -14,5 +14,6 @@
     <string name="enter_name_textview">Enter your name</string>
     <string name="home_enter_name">Enter</string>
     <string name="home_calling_activit">The Calling activity.</string>
+    <string name="txt_login_welcome">Login</string>
 
 </resources>

@@ -8,6 +8,12 @@
     android:orientation="vertical"
     >
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_login_welcome"
+        style="@style/page_title"/>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

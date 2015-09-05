@@ -4,6 +4,7 @@ import android.app.DialogFragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -95,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
         String username = String.valueOf(txtUsername.getText());
         String password = String.valueOf(txtPassword.getText());
         Boolean valid = false;
+
+        Log.w("Login", "username:" + username + ", password:" + password);
 
         if (username.equals("admin") && password.equals("admin")) {
             valid = true;
